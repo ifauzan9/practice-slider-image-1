@@ -9,14 +9,50 @@
   </head>
   <body>
     <div class="slider-wrap">
-      <span class="prev">&#8592;</span>
-      <div class="slider">
+      <div class="slider fade">
         <img src="https://placekitten.com/540/280" alt="" />
       </div>
-      <div class="slider">
+      <div class="slider fade">
         <img src="https://placekitten.com/541/281" alt="" />
       </div>
-      <span class="next">&#8592;</span>
+      <div class="slider fade">
+        <img src="https://placekitten.com/542/282" alt="" />
+      </div>
+      <div class="slider fade">
+        <img src="https://placekitten.com/543/283" alt="" />
+      </div>
+      <div class="slider fade">
+        <img src="https://placekitten.com/544/284" alt="" />
+      </div>
+      <span id="coba" class="prev">&#8592;</span>
+      <span class="next">&#8594;</span>
     </div>
+    <script>
+      const leftBtn = document.querySelector(".prev");
+      const rightBtn = document.querySelector(".next");
+      const allSlides = document.querySelectorAll(".slider");
+      let numberSlide = 2;
+      allSlides[numberSlide - 1].style.display = "block";
+
+      function clicked(e) {
+        allSlides.forEach((slide) => (slide.style.display = "none"));
+        e.target.className === "prev" ? numberSlide-- : numberSlide++;
+
+        if (numberSlide < 1) {
+          numberSlide = allSlides.length;
+        }
+
+        if (numberSlide > allSlides.length) {
+          numberSlide = 1;
+        }
+
+        allSlides[numberSlide - 1].style.display = "block";
+
+        console.log(numberSlide);
+      }
+
+      leftBtn.addEventListener("click", clicked);
+      rightBtn.addEventListener("click", clicked);
+    </script>
   </body>
 </html>

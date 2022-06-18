@@ -14,7 +14,6 @@ body{
 }
 
 .slider-wrap{
-    background-color: red;
     width: 500px;
     height: 250px;    
     border-radius: 10px;    
@@ -30,15 +29,60 @@ body{
     top: 100px;
     color: #fff;
     left: -20px;
-    background-color: black;
+    background-color: rgb(144, 165, 70);
+    border-radius: 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    user-select: none;    
 }
+
+.slider-wrap .prev:hover{
+    background-color: rgb(152, 184, 38);
+}
+
+.slider-wrap .next{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 25px;
+    top: 100px;
+    color: #fff;
+    right: -20px;
+    background-color: rgb(144, 165, 70);
+    border-radius: 20px;
+    font-size: 1.3em;
+    cursor: pointer;
+    user-select: none;
+}
+
 
 .slider {
     height: 100%;    
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
+    display: none;    
 }
+
+.fade{
+ animation-name: fade;   
+ animation-duration: 1.4s;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* .show{
+    display: block;    
+    
+} */
 
 .slider img{
     width: 100%;
